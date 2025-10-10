@@ -1,0 +1,78 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom shadow-sm sticky-top">
+  <div class="container d-flex align-items-center">
+    <a class="navbar-brand d-flex align-items-center fw-bold text-primary" href="">
+      <i class="fa-solid fa-compass me-2"></i>
+    </a>
+    <button 
+      class="navbar-toggler border-0" 
+      type="button" 
+      data-bs-toggle="collapse" 
+      data-bs-target="#navbarNav" 
+      aria-controls="navbarNav" 
+      aria-expanded="false" 
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon" style="filter: none;"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-between align-items-center" id="navbarNav">
+      <ul class="navbar-nav d-flex align-items-center gap-2 gap-lg-3">
+        <li class="nav-item">
+          <a class="nav-link fw-semibold <%= activePage.startsWith('/listings') ? 'text-primary' : '' %>" href="/listings">All Listings</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-semibold <%= activePage === '/listings/new' ? 'text-primary' : '' %>" href="/listings/new">Become a host</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav d-flex align-items-center gap-2">
+        <% if (!currUser) { %>
+          <li class="nav-item">
+            <a class="nav-link fw-semibold" href="/signup"><b>Sign Up</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-semibold" href="/login"><b>Login</b></a>
+          </li>
+        <% } else { %>
+          <li class="nav-item d-flex flex-column flex-lg-row align-items-center">
+            <span class="fw-semibold me-lg-2 text-secondary">Hi, <%= currUser.username %> 👋</span>
+            <a class="nav-link fw-semibold text-danger" href="/logout">Logout</a>
+          </li>
+        <% } %>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+<style>
+.navbar-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%280,0,0,0.7%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse.collapse.show {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .navbar-collapse.collapse.show .nav-link {
+    color: #333 !important;
+  }
+  .navbar-collapse.collapse.show .navbar-nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+</style>
+
+
+
+
+
+
+
+
+
+
