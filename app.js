@@ -73,7 +73,7 @@ app.get("/demoUser",async(req,res)=>{
 app.use((req,res,next)=>{
   res.locals.success=req.flash("success");
   res.locals.error=req.flash("error");
-  res.locals.currUser=req.user;
+  res.locals.currUser=req.user || null;
   res.locals.activePage = req.path;
   next();
 })
