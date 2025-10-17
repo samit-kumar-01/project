@@ -78,6 +78,11 @@ app.use((req,res,next)=>{
   res.locals.activePage = req.path;
   next();
 })
+app.use((req, res, next) => {
+  res.locals.activePage = req.path;
+  next();
+});
+
 app.use("/listings",listingRouter);
 app.use("/listings/:id/review",reviewRouter);
 app.use("/",userRouter);
