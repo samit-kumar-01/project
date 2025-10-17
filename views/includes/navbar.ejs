@@ -1,8 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom shadow-sm sticky-top">
   <div class="container d-flex align-items-center">
-    <a class="navbar-brand d-flex align-items-center fw-bold text-primary" href="">
+
+  
+    <a class="navbar-brand d-flex align-items-center fw-bold text-primary" href="/">
       <i class="fa-solid fa-compass me-2"></i>
     </a>
+
     <button 
       class="navbar-toggler border-0" 
       type="button" 
@@ -14,13 +17,15 @@
     >
       <span class="navbar-toggler-icon" style="filter: none;"></span>
     </button>
+
+  
     <div class="collapse navbar-collapse justify-content-between align-items-center" id="navbarNav">
       <ul class="navbar-nav d-flex align-items-center gap-2 gap-lg-3">
         <li class="nav-item">
-          <a class="nav-link fw-semibold <%= activePage.startsWith('/listings') ? 'text-primary' : '' %>" href="/listings">All Listings</a>
+          <a class="nav-link fw-semibold" href="/listings">All Listings</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fw-semibold <%= activePage === '/listings/new' ? 'text-primary' : '' %>" href="/listings/new">Become a host</a>
+          <a class="nav-link fw-semibold" href="/listings/new">Become a host</a>
         </li>
       </ul>
 
@@ -39,7 +44,6 @@
           </li>
         <% } %>
       </ul>
-
     </div>
   </div>
 </nav>
@@ -60,12 +64,14 @@
   .navbar-collapse.collapse.show .nav-link {
     color: #333 !important;
   }
+
   .navbar-collapse.collapse.show .navbar-nav {
     flex-direction: column;
     gap: 0.5rem;
   }
 }
 </style>
+
 
 
 
