@@ -30,7 +30,7 @@
       </ul>
 
       <ul class="navbar-nav d-flex align-items-center gap-2">
-        <% if (!currUser) { %>
+        <% if (!res.locals.currUser) { %>
           <li class="nav-item">
             <a class="nav-link fw-semibold" href="/signup"><b>Sign Up</b></a>
           </li>
@@ -39,7 +39,7 @@
           </li>
         <% } else { %>
           <li class="nav-item d-flex flex-column flex-lg-row align-items-center">
-            <span class="fw-semibold me-lg-2 text-secondary">Hi, <%= currUser.username %> 👋</span>
+            <span class="fw-semibold me-lg-2 text-secondary">Hi, <%= res.locals.currUser.username %> 👋</span>
             <a class="nav-link fw-semibold text-danger" href="/logout">Logout</a>
           </li>
         <% } %>
