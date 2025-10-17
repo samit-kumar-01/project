@@ -28,7 +28,7 @@
           <a class="nav-link fw-semibold" href="/listings/new">Become a host</a>
         </li>
       </ul>
-
+      <% const user = typeof currUser !== 'undefined' ? currUser : null; %>
       <ul class="navbar-nav d-flex align-items-center gap-2">
         <% if (!currUser) { %>
           <li class="nav-item">
