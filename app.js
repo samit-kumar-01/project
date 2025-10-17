@@ -29,9 +29,7 @@ app.use(express.static(path.join(__dirname,"public")));
 async function main() {
   await mongoose.connect(dbUrl);
 }
-app.listen(8080,()=>{
-    console.log("Server is listening");
-})
+
 const store=MongoStore.create({
   mongoUrl:dbUrl,
   crypto:{
@@ -90,5 +88,8 @@ app.all(/.*/,(req,res,next)=>{
 app.use((err,req,res,next)=>{
  let{status=500,message="Something went wrong"}=err;
  res.status(status).render("listings/error.ejs",{message});
+})
+app.listen(8080,()=>{
+    console.log("Server is listening");
 })
 
