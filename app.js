@@ -15,6 +15,7 @@ const passport=require("passport");
 const localStrategy=require("passport-local");
 let User=require("./models/user.js");
 const userRouter=require("./routes/user.js")
+const expressError = require("./utils/expressError.js"); 
 const app=express();
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
@@ -78,10 +79,6 @@ app.use((req,res,next)=>{
   res.locals.activePage = req.path;
   next();
 })
-app.use((req, res, next) => {
-  res.locals.activePage = req.path;
-  next();
-});
 
 app.use("/listings",listingRouter);
 app.use("/listings/:id/review",reviewRouter);
